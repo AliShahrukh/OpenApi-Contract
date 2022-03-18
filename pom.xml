@@ -12,22 +12,21 @@
     <description>Java client for contract integration</description>
 
     <properties>
-        <maven.compiler.source>${java-version}</maven.compiler.source>
-        <maven.compiler.target>${java-version}</maven.compiler.target>
         <default.package>com.learning.sop.risk</default.package>
-        <swagger-annotations-version>2.1.13</swagger-annotations-version>
-        <jersey-version>3.0.4</jersey-version>
-        <jackson-version>2.13.1</jackson-version>
-        <jodatime-version>2.10.13</jodatime-version>
-        <maven-plugin-version>1.0.0</maven-plugin-version>
+        <jackson-version>2.11.2</jackson-version>
+        <jersey-version>2.35</jersey-version>
         <junit-version>4.13.2</junit-version>
+        <javax.ws.rs-api-version>2.1.1</javax.ws.rs-api-version>
+        <swagger-annotations-version>2.1.5</swagger-annotations-version>
         <swagger.codegen.version>3.0.10</swagger.codegen.version>
         <swagger.codegen.generators.version>1.0.0-rc1</swagger.codegen.generators.version>
+        <javax-validation-api-version>2.0.1.Final</javax-validation-api-version>
+        <jodatime-version>2.10.13</jodatime-version>
         <risk.contract.version>1.0.0-SNAPSHOT</risk.contract.version>
         <risk.contract.artifact.name>risk-contract</risk.contract.artifact.name>
-        <javax.ws.rs-api-version>2.1.1</javax.ws.rs-api-version>
-        <javax-validation-api-version>2.0.1.Final</javax-validation-api-version>
         <java-version>1.8</java-version>
+        <maven.compiler.source>${java-version}</maven.compiler.source>
+        <maven.compiler.target>${java-version}</maven.compiler.target>
     </properties>
 
     <build>
@@ -39,13 +38,10 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>jar</goal>
                             <goal>test-jar</goal>
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -125,7 +121,7 @@
                             <library>jersey2</library>
                             <inputSpec>${project.build.directory}/risk_contract.yaml</inputSpec>
                             <apiPackage>${default.package}.handler</apiPackage>
-                            <modelPackage>${default.package}/model</modelPackage>
+                            <modelPackage>${default.package}.model</modelPackage>
                             <invokerPackage>${default.package}.handler</invokerPackage>
                             <configOptions>
                                 <java8>true</java8>
